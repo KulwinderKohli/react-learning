@@ -1,6 +1,9 @@
-'use strict';
+//'use strict';
 
 import React, { Component } from 'react';
+
+//import rocket from '../../public/assets/img/undraw_rocket'
+
 
 class Sidebar extends Component {
 
@@ -31,10 +34,10 @@ class Sidebar extends Component {
 
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a className="nav-link collapsed" href="component" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i className="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                <span>Component</span>
                 </a>
                 <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div className="bg-white py-2 collapse-inner rounded">
@@ -116,7 +119,7 @@ class Sidebar extends Component {
             </div>
 
             <div className="sidebar-card">
-                <img className="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt=""/>
+                <img className="sidebar-card-illustration mb-2" src={process.env.PUBLIC_URL + "/assets/img/undraw_rocket.svg"} alt=""/>
                 <p className="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a className="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>

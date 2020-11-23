@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import logo from '../../public/assets/img/undraw_profile_1.svg'
 
 class Header extends Component {
 	render() {
@@ -158,7 +159,7 @@ class Header extends Component {
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img className="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg" />
+                                    src={process.env.PUBLIC_URL + "/assets/img/undraw_profile.svg"} />
                             </a>
 
                             <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -12,6 +12,7 @@ class Layout extends Component {
 						<div id="content-wrapper" className="d-flex flex-column">
 		            		<div id="content">
 								<Header/>
+								
 							</div>
 							<Footer/>
 						</div>
