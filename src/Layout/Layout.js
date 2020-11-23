@@ -14,7 +14,7 @@ class Layout extends Component {
 								<Header/>
 								
 							</div>
-							<Footer/>
+							<Footer text="Copyright OneBusiness"/>
 						</div>
 				</div>
 			</div>
