@@ -2,32 +2,56 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import { Container, Button, ProgressBar, Row, Col } from 'react-bootstrap';
-
-// Datepicker package
-import DatePicker from "react-datepicker";
-import "../Style/Datepicker.css";
-import { registerLocale, setDefaultLocale } from  "react-datepicker";
-import es from 'date-fns/locale/es';
+import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import Loader from '../Components/Loader/Loader'
 
 class Layout extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			date: new Date()
+			posts: [],
+			isLoading: true
 		};
-		this.handleChange = this.handleChange.bind(this)
+		this.callApi = this.callApi.bind(this)
 	}
 
-	handleChange(date) {
-		console.log(date)
-		this.setState({
-			date: date
-		})
+	componentDidMount() {
+		
+	}
+
+	callApi() {
+		fetch('https://jsonplaceholder.typicode.com/posts')
+			.then(response => response.json())
+			.then(json => this.setState({
+				posts: json,
+				isLoading: false
+			}))
 	}
 
 	render() {
-		const { date } = this.state
+		const { posts, isLoading } = this.state
+
+		// updating data to userPosts
+		let userPosts 
+		if (isLoading) {
+			userPosts = <Col style={{textAlign: 'center'}}><Loader/><br/><Button onClick={this.callApi}>Load more posts</Button></Col>
+		} else {
+			if (posts.length > 0 ) {
+				userPosts = posts.map((post, index) => 
+						<Col lg={12} style={{marginBottom: '10px'}}>
+							<Card>
+								<Card.Body>
+									<Card.Title>{post.title}</Card.Title>
+									<Card.Text>{post.body}</Card.Text>
+								</Card.Body>
+							</Card> 
+						</Col>
+					);
+			} else {
+				userPosts = <Col><h1 style={{textAlign: 'center'}}>No posts available.</h1></Col>
+			}
+		}
+
 		return (
 			<div>
 				<div id="wrapper">
@@ -36,21 +60,13 @@ class Layout extends Component {
 		            		<div id="content">
 								<Header/>
 								<Container>
+								<i className="fa fa-refresh fa-spin"></i>
 									<Row>
-										<Col>
-											<ProgressBar animated now={45} />
-											<br/>
-											<DatePicker
-												locale="es"
-												selected={date}
-												onChange={this.handleChange}
-											/>
-											<Button variant="outline-success" size="sm">My First Button</Button>
-										</Col>
+										{userPosts}
 									</Row>
 								</Container>
 							</div>
-							<Footer text="Copyright OneBusiness"/>
+							<Footer text="Copyright OneBusiness 2020"/>
 						</div>
 				</div>
 			</div>
