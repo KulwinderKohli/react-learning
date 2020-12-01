@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from '../Components/Loader/Loader'
 
-class Layout extends Component {
+//import { SRLWrapper } from 'simple-react-lightbox'
 
-	  errorHandler = ({ error }) => this.setState({ error })  
-	
-	  onChangeCallback = selectedInterval => this.setState({ selectedInterval })  
+class LightBox extends Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			posts: [],
+			photos: [],
 			isLoading: true
 		};
 		this.callApi = this.callApi.bind(this)
@@ -25,35 +23,33 @@ class Layout extends Component {
 	}
 
 	callApi() {
-		fetch('https://jsonplaceholder.typicode.com/posts')
+		fetch('https://jsonplaceholder.typicode.com/photos')
 			.then(response => response.json())
 			.then(json => this.setState({
-				posts: json,
+				photos: json,
 				isLoading: false
-			}))
+            }))
 	}
 
 	render() {
-		const { posts, isLoading } = this.state
+		const { photos, isLoading } = this.state
 
 		// updating data to userPosts
 		let userPosts 
 		if (isLoading) {
-			userPosts = <Col style={{textAlign: 'center'}}><Loader/><br/><Button onClick={this.callApi}>Load more posts</Button></Col>
+			userPosts = <Col style={{textAlign: 'center'}}><Loader/><br/><Button onClick={this.callApi}>Load more photos</Button></Col>
 		} else {
-			if (posts.length > 0 ) {
-				userPosts = posts.map((post, index) => 
-						<Col lg={12} style={{marginBottom: '10px'}}>
-							<Card>
-								<Card.Body>
-									<Card.Title>{post.title}</Card.Title>
-									<Card.Text>{post.body}</Card.Text>
-								</Card.Body>
-							</Card> 
-						</Col>
+			if (photos.length > 0 ) {
+				userPosts = photos.map((post, index) => 
+			/*	<SrlWrapper>
+                    <img src={photos.thumbnailUrl} alt="No Photos" />
+                </SrlWrapper> */
+                 <Col lg={6} style={{marginBottom: '10px'}}>
+                <img src={photos.thumbnailUrl} alt="Photos" />
+            </Col> 
 					);
 			} else {
-				userPosts = <Col><h1 style={{textAlign: 'center'}}>No posts available.</h1></Col>
+				userPosts = <Col><h1 style={{textAlign: 'center'}}>No photos available.</h1></Col>
 			}
 		}
 
@@ -67,7 +63,7 @@ class Layout extends Component {
 								<Container>
 								<i className="fa fa-refresh fa-spin"></i>
 									<Row>
-										{userPosts}
+                                    {userPosts}
 									</Row>
 								</Container>
 							</div>
@@ -79,4 +75,4 @@ class Layout extends Component {
 	}
 }
 
-export default Layout
+export default LightBox
