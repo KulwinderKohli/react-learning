@@ -5,8 +5,6 @@ import Footer from './Footer';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from '../Components/Loader/Loader'
 
-//import { SRLWrapper } from 'simple-react-lightbox'
-
 class LightBox extends Component {
 
 	constructor(props) {
@@ -23,7 +21,7 @@ class LightBox extends Component {
 	}
 
 	callApi() {
-		fetch('https://jsonplaceholder.typicode.com/photos')
+		fetch('https://api.unsplash.com/photos/?client_id=4u3ufPEI1nBh9lE46d4HKdOFHj3_HkxOeOAH1tpFClg')
 			.then(response => response.json())
 			.then(json => this.setState({
 				photos: json,
@@ -41,12 +39,9 @@ class LightBox extends Component {
 		} else {
 			if (photos.length > 0 ) {
 				userPosts = photos.map((post, index) => 
-			/*	<SrlWrapper>
-                    <img src={photos.thumbnailUrl} alt="No Photos" />
-                </SrlWrapper> */
-                 <Col lg={6} style={{marginBottom: '10px'}}>
-                <img src={photos.thumbnailUrl} alt="Photos" />
-            </Col> 
+                <Col lg={4} style={{marginBottom: '10px'}}>
+					<img src={post.urls.thumb} />
+            	</Col> 
 					);
 			} else {
 				userPosts = <Col><h1 style={{textAlign: 'center'}}>No photos available.</h1></Col>

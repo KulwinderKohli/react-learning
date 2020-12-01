@@ -8,12 +8,11 @@ class MenuItem extends Component {
 
 	render() {
 		// Properties
-		const {menuname, menuicon} = this.props
+		const {menuname, menuicon, route} = this.props
 
 		return (
 			<li className="nav-item">
-                <a className="nav-link collapsed" href="component" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a className="nav-link" href={route}>
                     <i className={menuicon}></i>
                      <span>{menuname}</span>
                 </a>

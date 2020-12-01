@@ -30,31 +30,15 @@ class Sidebar extends Component {
             <hr className="sidebar-divider" />
 
             <div className="sidebar-heading">
-                Interface
+                Menu
             </div>
 
 
-            <MenuItem menuname="Components" menuicon="fas fa-fw fa-cog" />
-            <MenuItem menuname="Utilities" menuicon="fas fa-fw fa-wrench" />
-            
-            <hr className="sidebar-divider"/>
-
-
-            <div className="sidebar-heading">
-                Addons
-            </div>
-
-
-            <MenuItem menuname="Pages" menuicon="fas fa-fw fa-folder" />
-
-            <MenuItem menuname="Charts" menuicon="fas fa-fw fa-chart-area" />
-
-            <MenuItem menuname="Tables" menuicon="fas fa-fw fa-table" />
-
+            <MenuItem menuname="Images" menuicon="fas fa-fw fa-images" route="images"/>
+            <MenuItem menuname="Posts" menuicon="fas fa-fw fa-file-alt" route="posts"/>
 
 
             <hr className="sidebar-divider d-none d-md-block" />
-
 
             <div className="text-center d-none d-md-inline">
                 <button className="rounded-circle border-0" id="sidebarToggle"></button>
