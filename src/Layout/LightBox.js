@@ -1,9 +1,35 @@
-import React, { Component } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { Component } from 'react'
+import Header from './Header'
+import Sidebar from './Sidebar'
+import Footer from './Footer'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import Loader from '../Components/Loader/Loader'
+import SimpleReactLightbox from 'simple-react-lightbox'
+
+const options = {
+	settings: {
+	  overlayColor: "rgb(25, 136, 124)",
+	  autoplaySpeed: 1500,
+	  transitionSpeed: 900,
+	},
+	buttons: {
+		backgroundColor: 'rgba(30,30,36,0.8)',
+		iconColor: 'rgba(255, 255, 255, 0.8)',
+		iconPadding: '5px',
+		showCloseButton: true,
+		showFullscreenButton: true,
+		showNextButton: true,
+		showPrevButton: true,
+		showThumbnailsButton: true,
+		size: '40px'
+	},
+	caption: {
+	  captionColor: "#a6cfa5",
+	  captionFontFamily: "Raleway, sans-serif",
+	  captionFontWeight: "300",
+	  captionTextTransform: "uppercase",
+	}
+  };
 
 class LightBox extends Component {
 
@@ -40,7 +66,11 @@ class LightBox extends Component {
 			if (photos.length > 0 ) {
 				userPosts = photos.map((post, index) => 
                 <Col lg={4} style={{marginBottom: '10px'}}>
-					<img src={post.urls.thumb} />
+					 <SimpleReactLightbox options={options} >
+					 <a href={post.urls.full} data-attribute="SRL">
+					 <img src={post.urls.thumb} alt="No photos" />
+					 </a>
+                     </SimpleReactLightbox >	
             	</Col> 
 					);
 			} else {
