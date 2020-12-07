@@ -9,7 +9,9 @@ import React, { Component } from 'react';
 class Dashboard extends Component {
 	render() {
 		return (
-			<div></div>
+			<div>
+				<p>Dashboard</p>
+			</div>
 		);
 	}
 }

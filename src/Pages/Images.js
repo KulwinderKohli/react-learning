@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
+import Header from './../Layout/Header';
+import Sidebar from './../Layout/Sidebar';
+import Footer from './../Layout/Footer';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from '../Components/Loader/Loader'
 import SimpleReactLightbox from 'simple-react-lightbox'
