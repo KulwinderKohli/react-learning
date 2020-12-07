@@ -17,7 +17,6 @@ class Sidebar extends Component {
 
   render() {
     return (
-        <Router>
     	<ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -42,7 +41,7 @@ class Sidebar extends Component {
                 Menu
             </div>
 
-              <Link to="/images">
+            <Link to="/images">
             <MenuItem menuname="Images" menuicon="fas fa-fw fa-images" route="images"/>
             </Link>
             <Link to="/posts">
@@ -62,7 +61,6 @@ class Sidebar extends Component {
             </div>
 
         </ul>
-        </Router>
     );
   }
 
