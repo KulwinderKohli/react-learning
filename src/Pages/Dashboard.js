@@ -7,8 +7,7 @@ import { Container, Row } from 'react-bootstrap';
 class Dashboard extends Component {
 	render() {
 		return (
-			<div>
-             <div id="wrapper">
+			<div id="wrapper">
                  <Sidebar />
                  <div id="content-wrapper" className="d-flex flex-column">
                      <div id="content">
@@ -22,8 +21,7 @@ class Dashboard extends Component {
                      </div>
                      <Footer />
                  </div>
-             </div>
-         </div>
+            </div>
 		);
 	}
 }

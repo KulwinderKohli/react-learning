@@ -77,22 +77,20 @@ class Images extends Component {
 		}
 
 		return (
-			<div>
-				<div id="wrapper">
-					<Sidebar/>
-						<div id="content-wrapper" className="d-flex flex-column">
-		            		<div id="content">
-								<Header/>
-								<Container>
-								<i className="fa fa-refresh fa-spin"></i>
-									<Row>
-                                    {userPosts}
-									</Row>
-								</Container>
-							</div>
-							<Footer text="Copyright OneBusiness 2020"/>
+			<div id="wrapper">
+				<Sidebar/>
+					<div id="content-wrapper" className="d-flex flex-column">
+	            		<div id="content">
+							<Header/>
+							<Container>
+							<i className="fa fa-refresh fa-spin"></i>
+								<Row>
+                                {userPosts}
+								</Row>
+							</Container>
 						</div>
-				</div>
+						<Footer text="Copyright OneBusiness 2020"/>
+					</div>
 			</div>
 		);
 	}
