@@ -4,6 +4,7 @@ import Sidebar from './../Layout/Sidebar';
 import Footer from './../Layout/Footer';
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
 import Loader from '../Components/Loader/Loader'
+import { Helmet } from 'react-helmet';
 
 class Post extends Component {
 	errorHandler = ({ error }) => this.setState({ error })  
@@ -58,6 +59,9 @@ class Post extends Component {
 
 		return (
 			<div id="wrapper">
+				<Helmet>
+                    <title>SB Admin | Posts</title>
+                </Helmet>
 				<Sidebar/>
 					<div id="content-wrapper" className="d-flex flex-column">
 	            		<div id="content">
