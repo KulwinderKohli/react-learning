@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Dashboard from './Pages/Dashboard'
 import Images from './Pages/Images'
 import Post from './Pages/Post'
+import NotFound from './Pages/NotFound'
 
 class App extends React.Component {
     render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
                     <Route path="/posts">
                         <Post />
                     </Route>
+                    <Route component={NotFound} />
                 </Switch>
             </Router>
         )

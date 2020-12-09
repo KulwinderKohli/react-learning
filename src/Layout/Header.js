@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Search from '../Components/Search'
+import { Dropdown } from 'react-bootstrap'
 
 class Header extends Component {
 	render() {
@@ -143,7 +144,6 @@ class Header extends Component {
                         </li>
 
                         <div className="topbar-divider d-none d-sm-block"></div>
-
                         <li className="nav-item dropdown no-arrow">
                             <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,7 +151,8 @@ class Header extends Component {
                                 <img className="img-profile rounded-circle"
                                     src={process.env.PUBLIC_URL + "/assets/img/undraw_profile.svg"} />
                             </a>
-
+                              <Dropdown>
+                            <Dropdown.Menu>
                             <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a className="dropdown-item" href="#">
@@ -172,7 +173,10 @@ class Header extends Component {
                                     Logout
                                 </a>
                             </div>
-                        </li>
+                            </Dropdown.Menu>
+                            </Dropdown>
+                            </li>
+                            
                     </ul>
                 </nav>
 		);

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
 class MenuItem extends Component {
 
@@ -16,7 +16,7 @@ class MenuItem extends Component {
                 <Link className="nav-link" to={route}>
                     <i className={menuicon}></i>
                      <span>{menuname}</span>
-                </Link>
+			    </Link>
             </li>
 		);
 	}
