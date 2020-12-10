@@ -37,8 +37,23 @@ class Sidebar extends Component {
 
                         <Accordion.Collapse eventKey="0">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                    <Link to="/employee/all" className="collapse-item">All Employees</Link>
-                                    <Link to="/employee/create" className="collapse-item">Add Employee</Link>
+                                    <Link to="/employee/all" className="collapse-item">All employees</Link>
+                                    <Link to="/employee/create" className="collapse-item">Create employee</Link>
+                            </div>
+                        </Accordion.Collapse>
+                    </Accordion>
+                </li>
+                <li className="nav-item">
+                    <Accordion>
+                        <Accordion.Toggle as={Link} className ="nav-link dropdown" variant="link" eventKey="1">
+                            <i className="fas fa-fw fa-folder"></i>
+                            <span>Projects</span>
+                        </Accordion.Toggle>
+
+                        <Accordion.Collapse eventKey="1">
+                            <div className="bg-white py-2 collapse-inner rounded">
+                                    <Link to="/project/all" className="collapse-item">All projects</Link>
+                                    <Link to="/project/create" className="collapse-item">Create project</Link>
                             </div>
                         </Accordion.Collapse>
                     </Accordion>

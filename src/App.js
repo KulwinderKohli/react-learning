@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 // Importing the pages
 import Dashboard from './Pages/Dashboard'
-import Images from './Pages/Images'
-import Post from './Pages/Post'
+
+import AllEmployee from './Module/Employee/All'
+
 import NotFound from './Pages/NotFound'
 
 class App extends React.Component {
@@ -15,11 +16,8 @@ class App extends React.Component {
                     <Route exact path="/">
                         <Dashboard />
                     </Route>
-                    <Route path="/images">
-                        <Images />
-                    </Route>
-                    <Route path="/posts">
-                        <Post />
+                    <Route path="/employee/all">
+                        <AllEmployee />
                     </Route>
                     <Route component={NotFound} />
                 </Switch>
