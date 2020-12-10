@@ -5,6 +5,7 @@ import Footer from './../Layout/Footer';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Loader from '../Components/Loader/Loader'
 import SimpleReactLightbox from 'simple-react-lightbox'
+import { Helmet } from 'react-helmet';
 
 const options = {
 	settings: {
@@ -78,6 +79,9 @@ class Images extends Component {
 
 		return (
 			<div id="wrapper">
+				<Helmet>
+                    <title>SB Admin | Images</title>
+                </Helmet>
 				<Sidebar/>
 					<div id="content-wrapper" className="d-flex flex-column">
 	            		<div id="content">
