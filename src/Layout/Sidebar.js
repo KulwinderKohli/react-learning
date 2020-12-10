@@ -28,36 +28,19 @@ class Sidebar extends Component {
 
                 <div className="sidebar-heading">Menu</div>
 
-                <MenuItem menuname="Images" menuicon="fas fa-fw fa-images" route="images" />
-                <MenuItem menuname="Posts" menuicon="fas fa-fw fa-file-alt" route="posts" />
                 <li className="nav-item">
                     <Accordion>
                         <Accordion.Toggle as={Link} className ="nav-link dropdown" variant="link" eventKey="0">
                             <i className="fas fa-fw fa-users"></i>
-                            <span>Employee</span>
+                            <span>Employees</span>
                         </Accordion.Toggle>
 
                         <Accordion.Collapse eventKey="0">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                    <a className="collapse-item">All Employees</a>
-                                    <a className="collapse-item">Add Employee</a>
+                                    <Link to="/employee/all" className="collapse-item">All Employees</Link>
+                                    <Link to="/employee/create" className="collapse-item">Add Employee</Link>
                             </div>
                         </Accordion.Collapse>
-                    </Accordion>
-                </li>
-                <li className="nav-item">
-                    <Accordion>
-                            <Accordion.Toggle as={Link} className ="nav-link dropdown" variant="link" eventKey="1">
-                                <i className="fas fa-fw fa-users"></i>
-                                <span>Employee</span>
-                            </Accordion.Toggle>
-
-                            <Accordion.Collapse eventKey="1">
-                                <div className="bg-white py-2 collapse-inner rounded">
-                                        <a className="collapse-item">All Employees</a>
-                                        <a className="collapse-item">Add Employee</a>
-                                </div>
-                            </Accordion.Collapse>
                     </Accordion>
                 </li>
                 <hr className="sidebar-divider d-none d-md-block" />
