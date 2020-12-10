@@ -1,0 +1,24 @@
+/*
+* @Author: Kulwinder Kohli
+* @Date:   2020-12-09 15:55:33
+* @Last Modified by:   Kulwinder Kohli
+* @Last Modified time: 2020-12-09 16:00:14
+*/
+
+.sidebar .dropdown span::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f105';
+}
+
+/*.sidebar .dropdown span::after {
+    content: '\f105';
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 1rem;
+    text-align: center;
+    float: right;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+} */
