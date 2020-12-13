@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Header from './../Layout/Header';
-import Sidebar from './../Layout/Sidebar';
-import Footer from './../Layout/Footer';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { Component } from 'react'
+import Header from './../Layout/Header'
+import Sidebar from './../Layout/Sidebar'
+import Footer from './../Layout/Footer'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import Loader from '../Components/Loader/Loader'
 import SimpleReactLightbox from 'simple-react-lightbox'
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'
 
 const options = {
 	settings: {
@@ -93,7 +93,7 @@ class Images extends Component {
 								</Row>
 							</Container>
 						</div>
-						<Footer text="Copyright OneBusiness 2020"/>
+						<Footer text="Copyright SB Admin2 2020"/>
 					</div>
 			</div>
 		);

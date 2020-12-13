@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Header from './../Layout/Header'
 import Sidebar from './../Layout/Sidebar'
 import Footer from './../Layout/Footer'
-import { Container, Row } from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
+import { Container, Row } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 
 class Dashboard extends Component {
     render() {
@@ -23,7 +23,7 @@ class Dashboard extends Component {
                             </Row>
                         </Container>
                     </div>
-                    <Footer />
+                    <Footer text="Copyright SB Admin2 2020"/>
                 </div>
             </div>
         );

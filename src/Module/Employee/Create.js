@@ -4,7 +4,7 @@
 * @Last Modified by:   Kulwinder Kohli
 * @Last Modified time: 2020-12-10 16:02:03
 */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Create extends Component {
 	render() {

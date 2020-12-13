@@ -5,12 +5,12 @@
 * @Last Modified time: 2020-12-09 16:00:14
 */
 
-.sidebar .dropdown span::after {
+.sidebar .dropdown span::before {
     font-family: 'Font Awesome 5 Free';
     content: '\f105';
 }
 
-/*.sidebar .dropdown span::after {
+.sidebar .dropdown span::before {
     content: '\f105';
     position: absolute;
     right: 10px;
@@ -21,4 +21,10 @@
     vertical-align: 0;
     border: 0;
     font-weight: 900;
-} */
+} 
+
+.sidebar .dropdown span::before {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+} 

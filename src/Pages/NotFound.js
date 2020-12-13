@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
-import Header from './../Layout/Header';
-import Sidebar from './../Layout/Sidebar';
-import Footer from './../Layout/Footer';
-import { Container, Row } from 'react-bootstrap';
-import { Helmet } from 'react-helmet';
+import React, { Component } from 'react'
+import Header from './../Layout/Header'
+import Sidebar from './../Layout/Sidebar'
+import Footer from './../Layout/Footer'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
+const style = {
+    paddingBottom: '50px',
+    paddingTop: '120px'
+}
+const errorTxt = {
+    paddingTop: '10px'
+}
+
+const contentAlign = {
+    paddingBottom: '150px'
+}
 class Images extends Component {
 
     render() {
@@ -16,19 +26,17 @@ class Images extends Component {
                 </Helmet>
                 <Sidebar />
                 <div id="content-wrapper" className="d-flex flex-column">
-                    <div id="content">
-                        <Header />
-                        <div className="container-fluid">
-                            <div className="text-center">
-                                <div className="error mx-auto" data-text="404">
-                                </div>
-                                <p className="lead text-gray-800 mb-5">Page Not Found</p>
-                                <p className="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-                                <Link to="/">Back to Dashboard</Link>
+                    <Header />
+                    <div className="container-fluid">
+                        <div className="text-center" style={contentAlign}>
+                            <div className="error mx-auto" data-text="404">
                             </div>
+                            <p className="lead text-gray-800 mb-5" style={style}>Page Not Found</p>
+                            <p className="text-gray-500 mb-0" style={errorTxt}>It looks like you found a glitch in the matrix...</p>
+                            <Link to="/">Back to Dashboard</Link>
                         </div>
                     </div>
-                    <Footer text="Copyright OneBusiness 2020" />
+                    <Footer text="Copyright SB Admin2 2020" />
                 </div>
             </div>
         );

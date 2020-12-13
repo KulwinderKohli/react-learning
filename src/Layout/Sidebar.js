@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import MenuItem from '../Components/MenuItem'
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import { Accordion } from 'react-bootstrap'
 

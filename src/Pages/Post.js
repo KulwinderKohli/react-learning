@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Header from './../Layout/Header';
-import Sidebar from './../Layout/Sidebar';
-import Footer from './../Layout/Footer';
-import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import React, { Component } from 'react'
+import Header from './../Layout/Header'
+import Sidebar from './../Layout/Sidebar'
+import Footer from './../Layout/Footer'
+import { Container, Card, Row, Col, Button } from 'react-bootstrap'
 import Loader from '../Components/Loader/Loader'
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'
 
 class Post extends Component {
 	errorHandler = ({ error }) => this.setState({ error })  
@@ -73,7 +73,7 @@ class Post extends Component {
 								</Row>
 							</Container>
 						</div>
-						<Footer text="Copyright OneBusiness 2020"/>
+						<Footer text="Copyright SB Admin2 2020"/>
 					</div>
 			</div>
 		);
