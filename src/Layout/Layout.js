@@ -6,21 +6,21 @@ import { Container, Row } from 'react-bootstrap'
 
 class Layout extends Component {
 	render() {
+		const {children} = this.props
 		return (
 			<div>
 				<div id="wrapper">
-					<Sidebar/>
+					<Sidebar />
 						<div id="content-wrapper" className="d-flex flex-column">
 		            		<div id="content">
 								<Header/>
 								<Container>
-								<i className="fa fa-refresh fa-spin"></i>
 									<Row>
-								{/*		{userPosts} */}
+										{children}
 									</Row>
 								</Container>
 							</div>
-							<Footer text="Copyright SB Admin2 2020"/>
+							<Footer text="Copyright SB Admin 2020"/>
 						</div>
 				</div>
 			</div>
