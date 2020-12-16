@@ -1,21 +1,15 @@
-/*
-* @Author: Kulwinder Kohli
-* @Date:   2020-12-10 16:01:11
-* @Last Modified by:   Kulwinder Kohli
-* @Last Modified time: 2020-12-15 15:57:49
-*/
 import React, { Component } from 'react'
 import Heading from '../../Components/Heading'
 import Layout from '../../Layout/Layout'
 
-import { Container, Row, Table } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
 class All extends Component {
 	render() {
 		const title = 'All employees'
 
 		return (
-			<Layout>
+			<Layout pageTitle="SB Admin2 | All Employee">
 				<Heading heading={title} />
 				<Table striped bordered hover>
 					<thead>

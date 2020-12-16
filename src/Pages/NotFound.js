@@ -14,7 +14,7 @@ const errorTxt = {
 }
 
 const contentAlign = {
-    paddingBottom: '150px'
+    paddingBottom: '175px'
 }
 class Images extends Component {
 

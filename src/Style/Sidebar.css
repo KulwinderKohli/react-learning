@@ -10,7 +10,7 @@
     content: '\f105';
 }
 
-.sidebar .dropdown span::before {
+/*.sidebar .dropdown span {
     content: '\f105';
     position: absolute;
     right: 10px;
@@ -23,8 +23,6 @@
     font-weight: 900;
 } 
 
-.sidebar .dropdown span::before {
-    -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg)
-} 
+.dropdown span::before {
+    content: '\f107';
+} */

@@ -3,13 +3,17 @@ import Header from './Header'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
 import { Container, Row } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 
 class Layout extends Component {
 	render() {
-		const {children} = this.props
+		const {children, pageTitle} = this.props
 		return (
 			<div>
 				<div id="wrapper">
+				<Helmet>
+		            <title>{pageTitle}</title>
+                </Helmet>
 					<Sidebar />
 						<div id="content-wrapper" className="d-flex flex-column">
 		            		<div id="content">

@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 // Importing the pages
 import Dashboard from './Pages/Dashboard'
-
 import AllEmployee from './Module/Employee/All'
-
+import CreateEmployee from './Module/Employee/Create'
 import NotFound from './Pages/NotFound'
 
 class App extends React.Component {
@@ -18,6 +17,9 @@ class App extends React.Component {
                     </Route>
                     <Route path="/employee/all">
                         <AllEmployee />
+                    </Route>
+                    <Route path="/employee/create">
+                        <CreateEmployee />
                     </Route>
                     <Route component={NotFound} />
                 </Switch>

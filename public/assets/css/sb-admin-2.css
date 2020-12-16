@@ -2979,7 +2979,7 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
-./*dropdown-toggle::after {
+/*.dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
   vertical-align: 0.255em;
@@ -10193,12 +10193,7 @@ a:focus {
 
 .topbar .dropdown-list .dropdown-item {
   white-space: normal;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-left: 1px solid #e3e6f0;
-  border-right: 1px solid #e3e6f0;
   border-bottom: 1px solid #e3e6f0;
-  line-height: 1.3rem;
 }
 
 .topbar .dropdown-list .dropdown-item .dropdown-list-image {
