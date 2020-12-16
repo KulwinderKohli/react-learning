@@ -11,9 +11,9 @@ class Layout extends Component {
 		return (
 			<div>
 				<div id="wrapper">
-				<Helmet>
-		            <title>{pageTitle}</title>
-                </Helmet>
+					<Helmet>
+			            <title>SB Admin2 | {pageTitle}</title>
+	                </Helmet>
 					<Sidebar />
 						<div id="content-wrapper" className="d-flex flex-column">
 		            		<div id="content">

@@ -6,7 +6,29 @@ import '../Style/Sidebar.css'
 
 class Sidebar extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            linkActive: false 
+        };
+        this.buttonClick = this.buttonClick.bind(this)
+    }
+
+    buttonClick(eventKey) {
+        this.setState({
+            linkActive: !this.state.linkActive
+        })
+    }
+
     render() {
+        const {linkActive} = this.state;
+
+        let isLinkActive = 'active'
+
+        if (linkActive == false) {
+            isLinkActive = ''    
+        }
+
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -29,7 +51,7 @@ class Sidebar extends Component {
 
                 <li className="nav-item">
                     <Accordion>
-                        <Accordion.Toggle as={Link} className ="nav-link dropdown" variant="link" eventKey="0">
+                        <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="0">
                             <i className="fas fa-fw fa-users"></i>
                             <span>Employees</span>
                         </Accordion.Toggle>
@@ -44,7 +66,7 @@ class Sidebar extends Component {
                 </li>
                 <li className="nav-item">
                     <Accordion>
-                        <Accordion.Toggle as={Link} className ="nav-link dropdown" variant="link" eventKey="1">
+                        <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="1">
                             <i className="fas fa-fw fa-folder"></i>
                             <span>Projects</span>
                         </Accordion.Toggle>

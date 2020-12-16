@@ -9,7 +9,7 @@ class All extends Component {
 		const title = 'All employees'
 
 		return (
-			<Layout pageTitle="SB Admin2 | All Employee">
+			<Layout pageTitle="All Employee">
 				<Heading heading={title} />
 				<Table striped bordered hover>
 					<thead>

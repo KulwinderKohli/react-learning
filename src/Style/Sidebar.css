@@ -2,15 +2,11 @@
 * @Author: Kulwinder Kohli
 * @Date:   2020-12-09 15:55:33
 * @Last Modified by:   Kulwinder Kohli
-* @Last Modified time: 2020-12-09 16:00:14
+* @Last Modified time: 2020-12-16 17:06:37
 */
 
-.sidebar .dropdown span::before {
+.sidebar .dropdown span::after {
     font-family: 'Font Awesome 5 Free';
-    content: '\f105';
-}
-
-/*.sidebar .dropdown span {
     content: '\f105';
     position: absolute;
     right: 10px;
@@ -23,6 +19,6 @@
     font-weight: 900;
 } 
 
-.dropdown span::before {
+.sidebar .dropdown.active span::after {
     content: '\f107';
-} */
+}

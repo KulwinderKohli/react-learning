@@ -64,18 +64,16 @@ class Header extends Component {
                         <Dropdown.Menu>
                             <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in show" aria-labelledby="messagesDropdown">
                                 <h6 className="dropdown-header">ALERTS CENTER</h6>
-                                <Dropdown.Item href="#/action-1">
-                                    <a className="dropdown-item d-flex align-items-center" style={alertStyle}>
-                                        <div className="mr=3">
-                                            <div className="icon-circle bg-primary">
-                                                <i className="fas fa-file-alt text-white"></i>
-                                            </div>
+                                <Dropdown.Item href="#/action-1" className="dropdown-item d-flex align-items-center">
+                                    <div className="mr=3">
+                                        <div className="icon-circle bg-primary">
+                                            <i className="fas fa-file-alt text-white"></i>
                                         </div>
-                                        <div>
-                                            <div className="small text-gray-500">December 12, 2019</div>
-                                                      A new monthly report is ready to download!
-                                        </div>
-                                    </a>
+                                    </div>
+                                    <div>
+                                        <div className="small text-gray-500">December 12, 2019</div>
+                                                  A new monthly report is ready to download!
+                                    </div>
                                 </Dropdown.Item>
                                 <Dropdown.Item href="#/action-2">
                                     <a className="dropdown-item d-flex align-items-center" style={alertStyle}>
