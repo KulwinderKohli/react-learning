@@ -32,7 +32,7 @@ const btnStyle = {
 class Create extends Component {
 	render() {
 		return (
-			<Layout pageTitle="SB Admin2 | Create Employee">
+			<Layout pageTitle="Create Employee">
 				<div>
 						<Form>
 							<Form.Group controlId="employeeId">

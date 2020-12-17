@@ -4,7 +4,7 @@ import Layout from '../Layout/Layout'
 class Dashboard extends Component {
     render() {
         return (
-           <Layout pageTitle="SB Admin2 | Dashboard">
+           <Layout pageTitle="Dashboard">
            </Layout>
         );
     }

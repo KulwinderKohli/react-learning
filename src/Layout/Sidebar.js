@@ -15,17 +15,24 @@ class Sidebar extends Component {
     }
 
     buttonClick(eventKey) {
-        this.setState({
-            linkActive: !this.state.linkActive
-        })
-    }
+      switch(eventKey){
+          case '0':
+            this.setState({
+                linkActive: !this.state.linkActive
+            })    
+          case '1':
+            this.setState({
+                linkActive: !this.state.linkActive
+            })
+        }
+    } 
 
     render() {
         const {linkActive} = this.state;
 
         let isLinkActive = 'active'
 
-        if (linkActive == false) {
+        if (linkActive === false) {
             isLinkActive = ''    
         }
 

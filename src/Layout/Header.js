@@ -6,25 +6,14 @@ import { Link } from 'react-router-dom'
 const style = {
     width: '70px',
     height: '40px',
-    paddingTop: '30px'
-}
-const logoStyle = {
     paddingTop: '20px'
 }
+
 const fontStyle = {
     fontWeight: '400',
     color: 'darkblue'
 }
 
-const messageStyle = {
-    paddingLeft: '0px',
-    paddingRight: '0px'
-}
-
-const alertStyle = {
-    paddingLeft: '0px',
-    paddingRight: '0px'
-}
 class Header extends Component {
     render() {
         return (
@@ -75,8 +64,7 @@ class Header extends Component {
                                                   A new monthly report is ready to download!
                                     </div>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">
-                                    <a className="dropdown-item d-flex align-items-center" style={alertStyle}>
+                                <Dropdown.Item href="#/action-2" className="dropdown-item d-flex align-items-center">
                                         <div className="mr=3">
                                             <div className="icon-circle bg-primary">
                                                 <i className="fas fa-donate text-white"></i>
@@ -86,10 +74,8 @@ class Header extends Component {
                                             <div className="small text-gray-500">December 7, 2019</div>
                                         $290.29 has been deposited into your account!
                                     </div>
-                                    </a>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">
-                                    <a className="dropdown-item d-flex align-items-center" style={alertStyle}>
+                                <Dropdown.Item href="#/action-3" className="dropdown-item d-flex align-items-center">
                                         <div className="mr=3">
                                             <div className="icon-circle bg-primary">
                                                 <i className="fas fa-exclamation-triangle text-gray-400"></i>
@@ -99,7 +85,6 @@ class Header extends Component {
                                             <div className="small text-gray-500">December 2, 2019</div>
                                             <div>Spending Alert: We've noticed unusually high spending for your account.</div>
                                         </div>
-                                    </a>
                                 </Dropdown.Item>
                             </div>
                         </Dropdown.Menu>
@@ -114,8 +99,7 @@ class Header extends Component {
                         <Dropdown.Menu>
                             <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in show" aria-labelledby="messagesDropdown">
                                 <h6 className="dropdown-header">MESSAGE CENTER</h6>
-                                <Dropdown.Item href="#/action-1">
-                                    <a className="dropdown-item d-flex" style={messageStyle}>
+                                <Dropdown.Item href="#/action-1" className="dropdown-item d-flex">
                                         <div className="dropdown-list-image mr-3">
                                             <img className="rounded-circle" src={process.env.PUBLIC_URL + "/assets/img/undraw_profile_1.svg"}
                                                 alt="" />
@@ -126,10 +110,8 @@ class Header extends Component {
                                             problem I've been having.</div>
                                             <div className="small text-gray-500">Emily Fowler · 58m</div>
                                         </div>
-                                    </a>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">
-                                    <a className="dropdown-item d-flex" style={messageStyle}>
+                                <Dropdown.Item href="#/action-2" className="dropdown-item d-flex">
                                         <div className="dropdown-list-image mr-3">
                                             <img className="rounded-circle" src={process.env.PUBLIC_URL + "/assets/img/undraw_profile_2.svg"}
                                                 alt="" />
@@ -140,10 +122,8 @@ class Header extends Component {
                                             would you like them sent to you?</div>
                                             <div className="small text-gray-500">Jae Chun · 1d</div>
                                         </div>
-                                    </a>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">
-                                    <a className="dropdown-item d-flex" style={messageStyle}>
+                                <Dropdown.Item href="#/action-3" className="dropdown-item d-flex">
                                         <div className="dropdown-list-image mr-3">
                                             <img className="rounded-circle" src={process.env.PUBLIC_URL + "/assets/img/undraw_profile_3.svg"}
                                                 alt="" />
@@ -154,10 +134,8 @@ class Header extends Component {
                                             the progress so far, keep up the good work!</div>
                                             <div className="small text-gray-500">Morgan Alvarez · 2d</div>
                                         </div>
-                                    </a>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-4">
-                                    <a className="dropdown-item d-flex" style={messageStyle}>
+                                <Dropdown.Item href="#/action-4" className="dropdown-item d-flex">
                                         <div className="dropdown-list-image mr-3">
                                             <img className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                                                 alt="" />
@@ -168,10 +146,9 @@ class Header extends Component {
                                             told me that people say this to all dogs, even if they aren't good...</div>
                                             <div className="small text-gray-500">Chicken the Dog · 2w</div>
                                         </div>
-                                    </a>
                                 </Dropdown.Item>
-                                <Dropdown.Item href="#/action-5">
-                                    <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                <Dropdown.Item href="#/action-5" className="dropdown-item text-center small text-gray-500">
+                                   Read More Messages
                                 </Dropdown.Item>
                             </div>
                         </Dropdown.Menu>
@@ -181,7 +158,7 @@ class Header extends Component {
                         <Dropdown.Toggle id="dropdown-basic">
                             <li className="nav-item dropdown no-arrow">
                                 <a className="nav-link" href="#" id="userDropdown" role=""
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={logoStyle}>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span style={fontStyle}>Douglas McGee</span>
                                     <img className="img-profile rounded-circle"
                                         src={process.env.PUBLIC_URL + "/assets/img/undraw_profile.svg"} />
