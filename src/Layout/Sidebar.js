@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, Component } from 'react'
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import { Accordion } from 'react-bootstrap'
 
@@ -6,6 +6,7 @@ import '../Style/Sidebar.css'
 
 class Sidebar extends Component {
 
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -15,20 +16,13 @@ class Sidebar extends Component {
     }
 
     buttonClick(eventKey) {
-      switch(eventKey){
-          case '0':
-            this.setState({
+           this.setState({
                 linkActive: !this.state.linkActive
             })    
-          case '1':
-            this.setState({
-                linkActive: !this.state.linkActive
-            })
         }
-    } 
 
     render() {
-        const {linkActive} = this.state;
+       const {linkActive} = this.state;
 
         let isLinkActive = 'active'
 
@@ -36,6 +30,15 @@ class Sidebar extends Component {
             isLinkActive = ''    
         }
 
+        const [activeId, setActiveId] = ('0');
+
+        function toggleActive(id) {
+          if (activeId === id) {
+            setActiveId(null);
+          } else {
+            setActiveId(id);
+          }
+        }    
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -58,6 +61,7 @@ class Sidebar extends Component {
 
                 <li className="nav-item">
                     <Accordion>
+                    <div className={activeId === '0' ? 'nav-link dropdown isLinkActive' : 'nav-link dropdown'}>
                         <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="0">
                             <i className="fas fa-fw fa-users"></i>
                             <span>Employees</span>
@@ -67,12 +71,14 @@ class Sidebar extends Component {
                             <div className="bg-white py-2 collapse-inner rounded">
                                     <Link to="/employee/all" className="collapse-item">All employees</Link>
                                     <Link to="/employee/create" className="collapse-item">Create employee</Link>
-                            </div>
+                                    </div>
                         </Accordion.Collapse>
+                        </div>
                     </Accordion>
                 </li>
                 <li className="nav-item">
                     <Accordion>
+                    <div className={activeId === '0' ? 'nav-link dropdown isLinkActive' : 'nav-link dropdown'}>
                         <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="1">
                             <i className="fas fa-fw fa-folder"></i>
                             <span>Projects</span>
@@ -84,6 +90,7 @@ class Sidebar extends Component {
                                     <Link to="/project/create" className="collapse-item">Create project</Link>
                             </div>
                         </Accordion.Collapse>
+                        </div>
                     </Accordion>
                 </li>
                 <hr className="sidebar-divider d-none d-md-block" />
