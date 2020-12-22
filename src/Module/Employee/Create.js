@@ -2,35 +2,28 @@ import React, { Component } from 'react'
 import Layout from '../../Layout/Layout'
 import { Form, Button } from 'react-bootstrap'
 
-/*const initialValues = {
-	firstName: '',
-	lastName: '',
-	dateOfBirth: '',
-	userName: '',
-	email: '',
-	password: '',
-	checkbox: ''
-
-}
-
-const onSubmit = values => {
-	console.log('Form data', values)
-}
-
-const validationSchema = Yup.object({
-	firstName: Yup.string().required('First Name is required'),
-	lastName: Yup.string().required('Last Name is required'),
-	dateOfBirth: Yup.string().required('Company is required'),
-	userName: Yup.string().required('User Name is required'),
-	email: Yup.string().email('Invalid email format').required('Email is required'),
-	password: Yup.string().required('Password is required'),
-	checkbox: Yup.string().required('Confirmation is required'),
-})*/
-const btnStyle = {
-	backgroundColor: '#008CBA'
-}
 class Create extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			firstName: 'Kulwinder',
+			lastName: '',
+		};
+		this.onInputChange = this.onInputChange.bind(this)
+	}
+
+	onInputChange(e) {
+		this.setState({
+			firstName: e.target.value,
+			lastName: e.target.value,
+		})
+		console.log(e.target.value)
+	}
+
 	render() {
+		const {firstName, lastName} = this.state
+
 		return (
 			<Layout pageTitle="Create Employee">
 				<div>
@@ -42,12 +35,12 @@ class Create extends Component {
 
 							<Form.Group controlId="firstName">
 								<Form.Label>First Name</Form.Label>
-								<Form.Control type="text" />
+								<Form.Control type="text" onChange={this.onInputChange} value={firstName}/>
 							</Form.Group>
 
 							<Form.Group controlId="lastName">
 								<Form.Label>Last Name</Form.Label>
-								<Form.Control type="text" />
+								<Form.Control type="text" onChange={this.onInputChange} value={lastName}/>
 							</Form.Group>
 
 							<Form.Group controlId="dob">
@@ -77,9 +70,7 @@ class Create extends Component {
 								<Form.Check type="checkbox" label="I agree to terms and conditions" />
 							</Form.Group>
 
-							<Button variant="primary" type="submit" style={btnStyle}>
-								Submit
-                        </Button>
+							<Button variant="success" type="button">Submit</Button>
 						</Form>
 					
 				</div>
