@@ -10,35 +10,28 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            linkActive: false 
+            activeIds: []
         };
         this.buttonClick = this.buttonClick.bind(this)
     }
 
-    buttonClick(eventKey) {
-           this.setState({
-                linkActive: !this.state.linkActive
-            })    
+    buttonClick(id) {
+        let activeId = this.state.activeIds;
+
+        if( this.state.activeIds.some(item => id === item) === false) {
+            activeId.push(id)
+        } else {
+            activeId = activeId.filter(item => item !== id)
         }
 
-    render() {
-       const {linkActive} = this.state;
+        this.setState({
+            activeIds: activeId
+        })
+    }
 
-        let isLinkActive = 'active'
+    render() { 
+        const {activeIds} = this.state
 
-        if (linkActive === false) {
-            isLinkActive = ''    
-        }
-
-        const [activeId, setActiveId] = ('0');
-
-        function toggleActive(id) {
-          if (activeId === id) {
-            setActiveId(null);
-          } else {
-            setActiveId(id);
-          }
-        }    
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -61,8 +54,7 @@ class Sidebar extends Component {
 
                 <li className="nav-item">
                     <Accordion>
-                    <div className={activeId === '0' ? 'nav-link dropdown isLinkActive' : 'nav-link dropdown'}>
-                        <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="0">
+                        <Accordion.Toggle onClick={() => this.buttonClick(0)} as={Link} className={activeIds.some(item => 0 === item) === true ? 'nav-link dropdown active' : 'nav-link dropdown'} variant="link" eventKey="0">
                             <i className="fas fa-fw fa-users"></i>
                             <span>Employees</span>
                         </Accordion.Toggle>
@@ -73,13 +65,11 @@ class Sidebar extends Component {
                                     <Link to="/employee/create" className="collapse-item">Create employee</Link>
                                     </div>
                         </Accordion.Collapse>
-                        </div>
                     </Accordion>
                 </li>
                 <li className="nav-item">
                     <Accordion>
-                    <div className={activeId === '0' ? 'nav-link dropdown isLinkActive' : 'nav-link dropdown'}>
-                        <Accordion.Toggle onClick={this.buttonClick} as={Link} className={'nav-link dropdown '+isLinkActive} variant="link" eventKey="1">
+                        <Accordion.Toggle onClick={() => this.buttonClick(1)} as={Link} className={activeIds.some(item => 1 === item) === true ? 'nav-link dropdown active' : 'nav-link dropdown'} variant="link" eventKey="1">
                             <i className="fas fa-fw fa-folder"></i>
                             <span>Projects</span>
                         </Accordion.Toggle>
@@ -90,7 +80,6 @@ class Sidebar extends Component {
                                     <Link to="/project/create" className="collapse-item">Create project</Link>
                             </div>
                         </Accordion.Collapse>
-                        </div>
                     </Accordion>
                 </li>
                 <hr className="sidebar-divider d-none d-md-block" />
