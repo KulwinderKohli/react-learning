@@ -7,6 +7,13 @@ class Create extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			firstName: '',
+			lastName: '',
+			dob: '',
+			userName: '',
+			email: '',
+			password: '',
+			toc: '',
 		};
 		this.onInputChange = this.onInputChange.bind(this)
 	}
@@ -15,12 +22,15 @@ class Create extends Component {
 		this.setState({
 			[e.target.name]: e.target.value
 		})
-		console.log(e.target.value)
+	}
+
+	onSubmit() {
+		
 	}
 
 	render() {
 		const {items} = this.state
-
+		console.log(this.state)
 		return (
 			<Layout pageTitle="Create Employee">
 				<div>
@@ -32,12 +42,12 @@ class Create extends Component {
 
 							<Form.Group controlId="firstName">
 								<Form.Label>First Name</Form.Label>
-								<Form.Control type="text" onChange={this.onInputChange} value={this.state.firstName}/>
+								<Form.Control name="firstName" type="text" onChange={this.onInputChange} value={this.state.firstName}/>
 							</Form.Group>
 
 							<Form.Group controlId="lastName">
 								<Form.Label>Last Name</Form.Label>
-								<Form.Control type="text" onChange={this.onInputChange} value={this.state.lastName}/>
+								<Form.Control name="lastName" type="text" onChange={this.onInputChange} value={this.state.lastName}/>
 							</Form.Group>
 
 							<Form.Group controlId="dob">
@@ -47,12 +57,12 @@ class Create extends Component {
 
 							<Form.Group controlId="userName">
 								<Form.Label>User Name</Form.Label>
-								<Form.Control type="text" onChange={this.onInputChange} value={this.state.userName} />
+								<Form.Control type="text" name="userName" onChange={this.onInputChange} value={this.state.userName} />
 							</Form.Group>
 
 							<Form.Group controlId="formBasicEmail">
 								<Form.Label>Email address</Form.Label>
-								<Form.Control type="email" onChange={this.onInputChange} value={this.state.formBasicEmail} />
+								<Form.Control type="email" name="email" onChange={this.onInputChange} value={this.state.formBasicEmail} />
 								<Form.Text className="text-muted" >
 									We'll never share your email with anyone else.
                             </Form.Text>
@@ -60,14 +70,14 @@ class Create extends Component {
 
 							<Form.Group controlId="formBasicPassword">
 								<Form.Label>Password</Form.Label>
-								<Form.Control type="password" onChange={this.onInputChange} value={this.state.formBasicPassword} />
+								<Form.Control type="password" name="password" onChange={this.onInputChange} value={this.state.formBasicPassword} />
 							</Form.Group>
 
 							<Form.Group controlId="formBasicCheckbox">
-								<Form.Check type="checkbox" label="I agree to terms and conditions" onChange={this.onInputChange} value={this.state.formBasicCheckbox} />
+								<Form.Check type="checkbox" name="toc" label="I agree to terms and conditions" onChange={this.onInputChange} value="1" />
 							</Form.Group>
 
-							<Button variant="success" type="button">Submit</Button>
+							<Button variant="success" type="button" onClick={this.onSubmit}>Submit</Button>
 						</Form>
 					
 				</div>
