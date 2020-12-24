@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 class Register extends Component {
     render() {
         return (
-            <Auth bgImage="col-lg-6 d-none d-lg-block bg-register-image">
+            <Auth bgImage="bg-register-image">
                 <div className="text-center">
                     <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
                 </div>

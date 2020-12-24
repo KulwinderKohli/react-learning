@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 class ForgetPassword extends Component {
 	render() {
 		return (
-			<Auth bgImage="col-lg-6 d-none d-lg-block bg-password-image">
+			<Auth bgImage="bg-password-image">
 				<div className="text-center">
 					<h1 className="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
 					<p className="mb-4">We get it, stuff happens. Just enter your email address below

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 class Login extends Component {
 	render() {
 		return (
-			<Auth bgImage="col-lg-6 d-none d-lg-block bg-login-image">
+			<Auth bgImage="bg-login-image">
 				<div className="text-center">
 					<h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
 				</div>
