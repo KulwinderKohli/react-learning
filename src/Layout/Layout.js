@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Header from './Header'
-import Sidebar from './Sidebar'
-import Footer from './Footer'
+import Header from './Partitions/Header'
+import Sidebar from './Partitions/Sidebar'
+import Footer from './Partitions/Footer'
 import { Container, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 

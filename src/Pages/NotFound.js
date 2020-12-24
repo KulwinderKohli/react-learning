@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Header from './../Layout/Header'
-import Sidebar from './../Layout/Sidebar'
-import Footer from './../Layout/Footer'
+import Header from '../Layout/Partitions/Header'
+import Sidebar from '../Layout/Partitions/Sidebar'
+import Footer from '../Layout/Partitions/Footer'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 

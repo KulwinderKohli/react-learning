@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Search from '../Components/Search'
+import Search from '../../Components/Search'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 

@@ -1,8 +1,8 @@
-import React, { useState, Component } from 'react'
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import React, { Component } from 'react'
+import { BrowserRouter, Link } from "react-router-dom"
 import { Accordion } from 'react-bootstrap'
 
-import '../Style/Sidebar.css'
+import '../../Style/Sidebar.css'
 
 class Sidebar extends Component {
 
