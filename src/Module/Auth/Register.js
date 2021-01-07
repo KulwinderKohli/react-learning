@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import axios from 'axios'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
 
 class Register extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             confirmPassword: '',
-            successMessage: ''
+            successMessage: '',
+            errorMessage:''
         }
-
         this.createAccount = this.createAccount.bind(this)
         this.onChangeHandle = this.onChangeHandle.bind(this)
     }
@@ -26,11 +26,12 @@ class Register extends Component {
 
     createAccount(values) {
         var self = this
-        axios.post('http://lara.site/api/user/register', values)
+        axios.post('http://127.0.0.1:8000/api/user/register', values)
         .then(function (response) {
             self.setState({
                 successMessage: response.data.message
             })
+            swal("Registered successfully", "User Created", "success");
         })
         .catch(function (error) {
             console.log(error);
@@ -38,19 +39,16 @@ class Register extends Component {
     }
 
     render() {
-
         const RegistrationSchema = Yup.object().shape({
             name: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Name is Required'),
             email: Yup.string().email('Invalid email').required('Email is required'),
             password: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Password is required'), 
             confirmPassword: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').oneOf([Yup.ref('password'), null], 'Passwords must match').required('Confirm Password is required'),
         });
-
         const nameStyle = {
             width: '349px',
             height: '38px'
         }
-
         return (
             <Formik initialValues={{name: '', email: '', password: '', confirmPassword: ''}} validationSchema={RegistrationSchema} onSubmit={this.createAccount}>
                 {({ dirty, values, setFieldValue, errors, touched, setFieldTouched, isValid, handleSubmit, isSubmitting }) => (

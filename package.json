@@ -19,6 +19,7 @@
     "react-scripts": "4.0.0",
     "react-timeline-range-slider": "^1.1.2",
     "simple-react-lightbox": "^3.3.4-2",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.8"
   },
