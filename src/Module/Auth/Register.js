@@ -24,17 +24,16 @@ class Register extends Component {
         })
     }
 
-    createAccount(values) {
+    createAccount(values, {setSubmitting, setErrors, setStatus, resetForm}) {
         var self = this
-        axios.post('http://127.0.0.1:8000/api/user/register', values)
+        axios.post('http://lara.site/api/user/register', values)
         .then(function (response) {
-            self.setState({
-                successMessage: response.data.message
-            })
-            swal("Registered successfully", "User Created", "success");
+            swal("Coooooooooooool", response.data.message, "success");
+            resetForm({})
+            // Our logic for login
         })
         .catch(function (error) {
-            console.log(error);
+            swal("Ooooopps!!", error.response.data.errors.email[0], "error");
         });
     }
 
