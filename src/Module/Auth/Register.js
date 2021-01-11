@@ -15,25 +15,19 @@ class Register extends Component {
             errorMessage:''
         }
         this.createAccount = this.createAccount.bind(this)
-        this.onChangeHandle = this.onChangeHandle.bind(this)
-    }
-
-    onChangeHandle(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
     }
 
     createAccount(values, {setSubmitting, setErrors, setStatus, resetForm}) {
         var self = this
-        axios.post('http://lara.site/api/user/register', values)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/api/user/register`, values)
         .then(function (response) {
             swal("Coooooooooooool", response.data.message, "success");
             resetForm({})
             // Our logic for login
         })
         .catch(function (error) {
-            swal("Ooooopps!!", error.response.data.errors.email[0], "error");
+            console.log(error);
+          {  swal("Ooooopps!!", error.response.data.errors.email[0], "error"); }
         });
     }
 

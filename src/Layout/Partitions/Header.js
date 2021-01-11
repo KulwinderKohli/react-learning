@@ -11,7 +11,7 @@ const style = {
 
 const fontStyle = {
     fontWeight: '400',
-    color: 'darkblue'
+    color: ''
 }
 
 class Header extends Component {
@@ -44,7 +44,7 @@ class Header extends Component {
                             </form>
                         </div>
                     </li>
-                    <Dropdown style={style}>
+                    <Dropdown>
                         <Dropdown.Toggle id="dropdown-basic" className="e-caret-hide" >
                             <i className="fas fa-bell fa-fw"></i>
                             <span className="badge badge-danger badge-counter">3+</span>
@@ -179,7 +179,7 @@ class Header extends Component {
                                     Activity Log
                                 </Link>
                             </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
+                            <Dropdown.Item href="/login ">
                                 <Link to="/login" data-toggle="modal" data-target="#logoutModal">
                                     <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
