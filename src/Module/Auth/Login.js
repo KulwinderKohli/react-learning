@@ -9,18 +9,17 @@ class Login extends Component {
 	constructor(props) {
         super(props);
         this.state = {
-			email: '',
-            password: ''
+			errorMesssage: ''
         }
         this.login = this.login.bind(this)
 	}
 	
-	login(values, {setSubmitting, setErrors, setStatus, resetForm}) {
+	login(values, { setSubmitting, setErrors, setStatus, resetForm }) {
 		var self = this
-		axios.post("http://127.0.0.1:8000/api/user/login", values)
+		axios.post(`${process.env.REACT_APP_BASE_URL}/api/user/login`, values)
 		.then(function (response) {
-			resetForm({})
-			// Our logic for login
+			console.log(response);
+			//resetForm({})
 		})
 		.catch(function (error) {
 			console.log(error);
@@ -39,7 +38,7 @@ class Login extends Component {
 
 		
 		return (
-			<Formik initialValues={{name: '', email: '', password: ''}} validationSchema={LoginSchema} onSubmit={this.login}>
+			<Formik initialValues={{email: '', password: ''}} validationSchema={LoginSchema} onSubmit={this.login()}>
                 {({ dirty, values, setFieldValue, errors, touched, setFieldTouched, isValid, handleSubmit, isSubmitting }) => (
 			<Auth bgImage="bg-login-image">
 				<div className="text-center">
@@ -60,9 +59,7 @@ class Login extends Component {
 							<label className="custom-control-label" for="customCheck">Remember Me</label>
 						</div>
 					</div>
-					<button href="login.html" variant="primary" className="button button-align">
-						Login
-                    </button>
+					<button type="submit" variant="primary" className="button button-align">Login</button>
 				</Form>
                   <hr/>
 				<div className="text-center">
