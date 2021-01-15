@@ -4,8 +4,21 @@ import Sidebar from './Partitions/Sidebar'
 import Footer from './Partitions/Footer'
 import { Container, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
+import { reactLocalStorage } from 'reactjs-localstorage';
+import { withRouter } from "react-router-dom"
 
 class Layout extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+
+	componentDidMount() {
+		if (reactLocalStorage.get('accessToken') === undefined) {
+			this.props.history.push('/login')
+		}
+	}
+
 	render() {
 		const {children, pageTitle} = this.props
 		return (
@@ -32,4 +45,4 @@ class Layout extends Component {
 	}
 }
 
-export default Layout
+export default withRouter(Layout)

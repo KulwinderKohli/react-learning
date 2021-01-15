@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Search from '../../Components/Search'
 import { Dropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 const style = {
     width: '70px',
@@ -159,7 +160,7 @@ class Header extends Component {
                             <li className="nav-item dropdown no-arrow">
                                 <a className="nav-link" href="#" id="userDropdown" role=""
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span style={fontStyle}>Douglas McGee</span>
+                                    <span style={fontStyle}>{ reactLocalStorage.getObject('user').name }</span>
                                     <img className="img-profile rounded-circle"
                                         src={process.env.PUBLIC_URL + "/assets/img/undraw_profile.svg"} />
                                 </a>

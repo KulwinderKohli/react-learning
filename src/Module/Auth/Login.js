@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import Auth from '../../Layout/Auth.js'
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { BrowserRouter as Router, Link, withRouter } from "react-router-dom"
 import axios from 'axios'
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 class Login extends Component {
 	constructor(props) {
@@ -18,19 +20,23 @@ class Login extends Component {
 		var self = this
 		axios.post(`${process.env.REACT_APP_BASE_URL}/api/user/login`, values)
 		.then(function (response) {
-			console.log(response);
-			//resetForm({})
+			reactLocalStorage.setObject('user', response.data.user);
+			reactLocalStorage.set('accessToken', response.data.accessToken)
+			self.props.history.push('/')
 		})
 		.catch(function (error) {
-			console.log(error);
-		  {/*  swal("Ooooopps!!", error.response.data.errors.email[0], "error"); */}
+			console.log(error)
+			swal("Ooooopps!!", error.response.data.message, "error");
 		});
 	}
+
 	render() {
+
 		const LoginSchema = Yup.object().shape({
             email: Yup.string().email('Invalid email').required('Email is required'),
-            password: Yup.string().min(6, 'Too Short!').max(50, 'Too Long!').required('Password is required'), 
+            password: Yup.string().max(50, 'Too Long!').required('Password is required'), 
         });
+
         const nameStyle = {
             width: '349px',
             height: '38px'
@@ -38,7 +44,7 @@ class Login extends Component {
 
 		
 		return (
-			<Formik initialValues={{email: '', password: ''}} validationSchema={LoginSchema} onSubmit={this.login()}>
+			<Formik initialValues={{email: '', password: ''}} validationSchema={LoginSchema} onSubmit={this.login}>
                 {({ dirty, values, setFieldValue, errors, touched, setFieldTouched, isValid, handleSubmit, isSubmitting }) => (
 			<Auth bgImage="bg-login-image">
 				<div className="text-center">
@@ -75,4 +81,4 @@ class Login extends Component {
 	}
 }
 
-export default Login
+export default withRouter(Login)
